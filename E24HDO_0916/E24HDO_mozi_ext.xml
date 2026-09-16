@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mozi>
+    <film id="thn_nxm_2jb" mufaj="horror">
+        <rendezo id="nzk_4xm_2jb" nev="alex"/>
+        <szinesz id="u5g_4xm_2jb" nev="Madison_Ivy"/>
+        <szinesz id="a">
+            <gyerekszinesz/>
+            <musicalszineszesz/>
+            <szinkronszinesz/>
+        </szinesz>
+        <iro id="trv_4xm_2jb"/>
+    </film>
+
+    <film id="01">
+        <rendezo id="nzk_4xm_3jb" nev="Rendező bá">
+            <szuletesidatum ev="1988" honap="05" nap="15"/>
+            <allampolgarsag>
+                magyar
+            </allampolgarsag>
+        </rendezo>
+        <iro id="trv_4xm_3jb">
+            <nev>
+                Gipsz Jakab
+            </nev>
+            <datum>
+                2026-04-12
+            </datum>
+        </iro>
+    </film>
+</mozi>

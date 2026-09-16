@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<E24HDO_orarend>
+    <ora id="GEIAL331-B2-00" tipus="elmelet">
+        <targy>Web technológiák 1.</targy>
+        <idopont>
+            <nap>hétfő</nap>
+            <tol>10</tol>
+            <ig>12</ig>
+        </idopont>
+        <helyszin>Előadó V</helyszin>
+        <oktato>Dr. Agárdi Anita</oktato>
+        <szak>Programtervező informatikus</szak>
+    </ora>
+    <ora id="MEIOKMUSZAN1" tipus="elmelet">
+        <targy>Angol műszaki szaknyelv 1.</targy>
+        <idopont>
+            <nap>hétfő</nap>
+            <tol>12</tol>
+            <ig>14</ig>
+        </idopont>
+        <helyszin>A1/131</helyszin>
+        <oktato>Kovács Boglárka Gizella</oktato>
+        <szak>Programtervező informatikus</szak>
+    </ora>
+    <ora id="GEIAK130-B2-00" tipus="gyakorlat">
+        <targy>Mesterséges intelligencia alapok</targy>
+        <idopont>
+            <nap>kedd</nap>
+            <tol>8</tol>
+            <ig>10</ig>
+        </idopont>
+        <helyszin>Előadó XXXIII</helyszin>
+        <oktato>Kunné Dr. Tamás Judit</oktato>
+        <szak>Programtervező informatikus</szak>
+    </ora>
+    <ora id="GEIAK130-B2-01" tipus="elmelet">
+        <targy>Mesterséges intelligencia alapok</targy>
+        <idopont>
+            <nap>kedd</nap>
+            <tol>10</tol>
+            <ig>12</ig>
+        </idopont>
+        <helyszin>Előadó XXXII</helyszin>
+        <oktato>Kunné Dr. Tamás Judit</oktato>
+        <szak>Programtervező informatikus</szak>
+    </ora>
+    <ora id="GEMAK234-B2-00" tipus="elmelet">
+        <targy>Algoritmusok és vizsgálatuk</targy>
+        <idopont>
+            <nap>kedd</nap>
+            <tol>14</tol>
+            <ig>16</ig>
+        </idopont>
+        <helyszin>Előadó XXX</helyszin>
+        <oktato>Házy Attila</oktato>
+        <szak>Programtervező informatikus</szak>
+    </ora>
+    <ora id="GEMAK234-B2-01" tipus="gyakorlat">
+        <targy>Algoritmusok és vizsgálatuk</targy>
+        <idopont>
+            <nap>kedd</nap>
+            <tol>16</tol>
+            <ig>18</ig>
+        </idopont>
+        <helyszin>Előadó XXX</helyszin>
+        <oktato>Házy Attila</oktato>
+        <szak>Programtervező informatikus</szak>
+    </ora>
+    <ora id="GEIAL32K-B2-00" tipus="elmelet">
+        <targy>Webes adatkezelő környezetek</targy>
+        <idopont>
+            <nap>szerda</nap>
+            <tol>8</tol>
+            <ig>10</ig>
+        </idopont>
+        <helyszin>In/202</helyszin>
+        <oktato>Dr. Kovács László József</oktato>
+        <szak>Programtervező informatikus</szak>
+    </ora>
+    <ora id="GEIAL32K-B2-01" tipus="gyakorlat">
+        <targy>Webes adatkezelő környezetek</targy>
+        <idopont>
+            <nap>szerda</nap>
+            <tol>10</tol>
+            <ig>12</ig>
+        </idopont>
+        <helyszin>In/101</helyszin>
+        <oktato>Dr. Bednarik László</oktato>
+        <szak>Programtervező informatikus</szak>
+    </ora>
+    <ora id="GEIAL331-B2-01" tipus="gyakorlat">
+        <targy>Web technológiák 1.</targy>
+        <idopont>
+            <nap>szerda</nap>
+            <tol>12</tol>
+            <ig>14</ig>
+        </idopont>
+        <helyszin>In/101</helyszin>
+        <oktato>Dr. Bednarik László</oktato>
+        <szak>Programtervező informatikus</szak>
+    </ora>
+    <ora id="GEIAL315-B2-00" tipus="elmelet">
+        <targy>Vállalati információs rendszerek fejlesztése</targy>
+        <idopont>
+            <nap>szerda</nap>
+            <tol>14</tol>
+            <ig>16</ig>
+        </idopont>
+        <helyszin>In/103</helyszin>
+        <oktato>Dr. Sasvári Péter László</oktato>
+        <szak>Programtervező informatikus</szak>
+    </ora>
+    <ora id="GEIAL315-B2-01" tipus="gyakorlat">
+        <targy>Vállalati információs rendszerek fejlesztése</targy>
+        <idopont>
+            <nap>szerda</nap>
+            <tol>18</tol>
+            <ig>20</ig>
+        </idopont>
+        <helyszin>In/103</helyszin>
+        <oktato>Dr. Sasvári Péter László</oktato>
+        <szak>Programtervező informatikus</szak>
+    </ora>
+
+</E24HDO_orarend>
