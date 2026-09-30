@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT mozi (film*)>
+<!ELEMENT film (cim+, rendezo+, szinesz+)>
+<!ATTLIST film mufaj (akcio | vigjatek | drama | romantikus) "romantikus" #REQUIRED>
+
+<!ELEMENT cim (#PCDATA)>
+
+<!ELEMENT rendezo EMPTY>
+<!ATTLIST rendezo id ID #REQUIRED>
+<!ATTLIST rendezo name CDATA #REQUIRED>
+
+<!ELEMENT szinesz EMPTY>
+<!ATTLIST szinesz id ID #REQUIRED>
+<!ATTLIST szinesz nev CDATA #IMPLIED>

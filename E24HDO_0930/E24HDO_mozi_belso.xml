@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mozi SYSTEM "mozi.dtd">
+
+<mozi>
+    <film mufaj="vigjatek">
+        <cim>Gigakemény film</cim>
+        <rendezo id="rendezo_1" name="Rendező bácsi"/>
+        <szinesz id="szinesz_1" nev="Színésznő"/>
+        <szinesz id="szinesz_2" nev="Színészúr"/>
+    </film>
+</mozi>

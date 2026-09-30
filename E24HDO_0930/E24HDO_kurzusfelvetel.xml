@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<E24HDO_kurzusfelvetel tanév="2026/27" egyetem="ME">
+
+    <hallgató>
+        <hallgato>
+            <hnev>Héjjas Gyula</hnev>
+            <szulev>2004</szulev>
+            <szak evf="3">Programtervező Infromatikus</szak>
+        </hallgato>
+    </hallgató>
+
+    <kurzusok>
+        <kurzus id="GEIAL331-B2-01" jovahagyas="igen" nyelv="magyar">
+            <kurzusnev>Webtech 1</kurzusnev>
+            <kredit>5</kredit>
+            <hely>
+                In/101
+            </hely>
+            <idopont>
+                szerda 12-14
+            </idopont>
+            <oktato>
+                Dr. Bednarik László
+            </oktato>
+            <oraado>
+                Dr. Bednarik László
+            </oraado>
+        </kurzus>
+        <kurzus id="GEIAL32K-B2-01" jovahagyas="igen" nyelv="magyar">
+            <kurzusnev>Webes adatkezelő kökrnyezetek</kurzusnev>
+            <kredit>5</kredit>
+            <hely>
+                In/101
+            </hely>
+            <idopont>
+                szerda 10-12
+            </idopont>
+            <oktato>
+                Dr. Bednarik László
+            </oktato>
+        </kurzus>
+        <kurzus id="GEMAK234-B2-01" jovahagyas="igen" nyelv="magyar">
+            <kurzusnev>Algoritmusok és vizsgálatuk</kurzusnev>
+            <kredit>5</kredit>
+            <hely>
+                E30
+            </hely>
+            <idopont>
+                kedd 14-16
+            </idopont>
+            <oktato>
+                Házy Attila
+            </oktato>
+            <oraado>
+                Házy Attila
+            </oraado>
+        </kurzus>
+    </kurzusok>
+
+</E24HDO_kurzusfelvetel>
