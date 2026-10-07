@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Gyökérelem -->
+    <xs:element name="E24HDO_orarend">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ora" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+
+                            <!-- Tantárgy -->
+                            <xs:element name="targy" type="xs:string"/>
+
+                            <!-- Időpont -->
+                            <xs:element name="idopont">
+                                <xs:complexType>
+                                    <xs:sequence>
+
+                                        <!-- Nap -->
+                                        <xs:element name="nap">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="hétfő"/>
+                                                    <xs:enumeration value="kedd"/>
+                                                    <xs:enumeration value="szerda"/>
+                                                    <xs:enumeration value="csütörtök"/>
+                                                    <xs:enumeration value="péntek"/>
+                                                    <xs:enumeration value="szombat"/>
+                                                    <xs:enumeration value="vasárnap"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+
+                                        <!-- Kezdési idő -->
+                                        <xs:element name="tol">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:integer">
+                                                    <xs:minInclusive value="0"/>
+                                                    <xs:maxInclusive value="23"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+
+                                        <!-- Befejezési idő -->
+                                        <xs:element name="ig">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:integer">
+                                                    <xs:minInclusive value="0"/>
+                                                    <xs:maxInclusive value="23"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+
+                            <!-- Helyszín -->
+                            <xs:element name="helyszin" type="xs:string"/>
+
+                            <!-- Oktató -->
+                            <xs:element name="oktato" type="xs:string"/>
+
+                            <!-- Szak -->
+                            <xs:element name="szak" type="xs:string"/>
+
+                        </xs:sequence>
+
+                        <!-- Óra azonosítója -->
+                        <xs:attribute name="id" type="xs:string" use="required"/>
+
+                        <!-- Óra típusa -->
+                        <xs:attribute name="tipus" use="required">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="elmelet"/>
+                                    <xs:enumeration value="gyakorlat"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
