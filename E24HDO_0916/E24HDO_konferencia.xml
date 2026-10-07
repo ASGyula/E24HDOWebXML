@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<konferencia>
+    <cim>Nemzetközi Informatikai és Adatkezelési Konferencia 2026</cim>
+    <hallgatók>
+        <hallgató>
+            <név>Kiss Péter</név>
+            <lakcím>3525 Miskolc, Kossuth Lajos utca 12.</lakcím>
+        </hallgató>
+        <hallgató>
+            <név>Nagy Anna</név>
+            <lakcím>1051 Budapest, Deák Ferenc tér 4.</lakcím>
+        </hallgató>
+    </hallgatók>
+    <helyszín>Miskolci Egyetem, Főépület Aula</helyszín>
+    <előadó>
+        <név>Dr. Kovács István</név>
+        <adószám>12345678-1-42</adószám>
+        <lakcím>4028 Debrecen, Kassai út 26.</lakcím>
+    </előadó>
+    <dátum>2026-10-15</dátum>
+</konferencia>
