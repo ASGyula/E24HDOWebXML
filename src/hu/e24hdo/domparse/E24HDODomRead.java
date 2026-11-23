@@ -12,24 +12,6 @@ public class E24HDODomRead extends E24HDODom{
         super(fileName);
     }
 
-    public HashMap<String, Element> getElementList(String tag, String elementID){
-        HashMap<String, Element> hashMap = new HashMap<String, Element>();
-        NodeList nodeList = getDocument().getElementsByTagName(tag);
-        if(nodeList.getLength() == 0){
-            Colors.printWithColor(Colors.RED, "Nincs ilyen tag!");
-        }
-        for(int i = 0; i < nodeList.getLength(); i++){
-            Node node = nodeList.item(i);
-            if(node.getNodeType() == Node.ELEMENT_NODE){
-                Element element = (Element) node;
-                String id = element.getAttribute(elementID);
-                hashMap.put(id, element);
-            }
-        }
-
-        return hashMap;
-    }
-
     public HashMap<String, Element> getOrders(){
         HashMap<String, Element> hashMap = new HashMap<String, Element>();
         NodeList nodeList = getDocument().getElementsByTagName("Fogyasztas");

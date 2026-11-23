@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<KoffeinLabor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-              xsi:noNamespaceSchemaLocation="E24HDO_XMLSchema.xsd">
+<?xml version="1.0" encoding="UTF-8" ?>
 
+<KoffeinLabor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Gyartok>
         <Gyarto GyartoID="GY01">
             <Cegnev>Monster Beverage Corporation</Cegnev>
@@ -19,7 +18,6 @@
             <AlapitasEve>2021</AlapitasEve>
         </Gyarto>
     </Gyartok>
-
     <Italok>
         <Ital ItalID="IT01" GyartoRef="GY01">
             <Nev>Monster Espresso 304</Nev>
@@ -49,7 +47,6 @@
             <Szin>#20161f</Szin>
         </Ital>
     </Italok>
-
     <LaborKozpontok>
         <LaborKozpont KozpontID="LK01">
             <Varos>Miskolc</Varos>
@@ -67,7 +64,6 @@
             <Hutokapacitas>1200</Hutokapacitas>
         </LaborKozpont>
     </LaborKozpontok>
-
     <Tagok>
         <Tag TagID="T01" KozpontRef="LK01">
             <Nev>
@@ -94,7 +90,6 @@
             <SzuletesiDatum>2004-08-21</SzuletesiDatum>
         </Tag>
     </Tagok>
-
     <VIPKartyak>
         <VIPKartya KartyaID="VIP01" TagRef="T01">
             <Sorozatszam>KL-2026-0001</Sorozatszam>
@@ -112,7 +107,6 @@
             <KiallitasDatuma>2026-04-01</KiallitasDatuma>
         </VIPKartya>
     </VIPKartyak>
-
     <Fogyasztasok>
         <Fogyasztas TagRef="T01" ItalRef="IT01">
             <FogyasztasDatuma>2026-11-18</FogyasztasDatuma>
@@ -139,5 +133,4 @@
             <RitualisKombo>Vizsga előtti hajtás + 2 cigi</RitualisKombo>
         </Fogyasztas>
     </Fogyasztasok>
-
 </KoffeinLabor>

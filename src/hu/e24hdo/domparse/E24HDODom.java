@@ -2,6 +2,7 @@ package hu.e24hdo.domparse;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
@@ -9,26 +10,31 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 
 public class E24HDODom{
-    private String fileName;
-    private Document document;
-    private Element rootElement;
+    private final String fileName;
+    private final Document document;
+    private final Element rootElement;
 
     public E24HDODom(String fileName){
         this.fileName = fileName;
         File file = new File(fileName);
         try{
-            document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(file);
-            document.getDocumentElement().normalize();
-            rootElement = document.getDocumentElement();
+            this.document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(file);
+            this.document.getDocumentElement().normalize();
+            this.rootElement = document.getDocumentElement();
         }catch(IOException | SAXException | ParserConfigurationException e){
             throw new RuntimeException(e);
         }
     }
 
+    public String getFileName(){
+        return fileName;
+    }
+
     public Document getDocument(){
-        return document;
+        return this.document;
     }
 
     public void printRootElement(){
@@ -48,6 +54,24 @@ public class E24HDODom{
         return rootElement;
     }
 
+    public HashMap<String, Element> getElementList(String tag, String elementID){
+        HashMap<String, Element> hashMap = new HashMap<String, Element>();
+        NodeList nodeList = getDocument().getElementsByTagName(tag);
+        if(nodeList.getLength() == 0){
+            Colors.printWithColor(Colors.RED, "Nincs ilyen tag!");
+        }
+        for(int i = 0; i < nodeList.getLength(); i++){
+            Node node = nodeList.item(i);
+            if(node.getNodeType() == Node.ELEMENT_NODE){
+                Element element = (Element) node;
+                String id = element.getAttribute(elementID);
+                hashMap.put(id, element);
+            }
+        }
+
+        return hashMap;
+    }
+
     public String joinMultipleTags(String tag, Element element){
         NodeList nodeList = element.getElementsByTagName(tag);
         StringBuilder stringBuilder = new StringBuilder();
@@ -56,5 +80,20 @@ public class E24HDODom{
             stringBuilder.append(nodeList.item(i).getTextContent().trim());
         }
         return stringBuilder.toString();
+    }
+
+    public String joinMultipleText(String[] stringArray){
+        StringBuilder stringBuilder = new StringBuilder();
+        for(int i = 0; i < stringArray.length; i++){
+            if(i > 0) stringBuilder.append(", ");
+            stringBuilder.append(stringArray[i]);
+        }
+        return stringBuilder.toString();
+    }
+
+    public void appendChild(Element parent, String tagName, String text){
+        Element child = getDocument().createElement(tagName);
+        child.setTextContent(text);
+        parent.appendChild(child);
     }
 }
