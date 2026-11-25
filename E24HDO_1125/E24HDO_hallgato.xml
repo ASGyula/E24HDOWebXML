@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="E24HDO_hallgato.xsd">
+    <hallgato id="01">
+        <keresztnev>Pál</keresztnev>
+        <vezeteknev>Kiss</vezeteknev>
+        <becenev>Kis</becenev>
+        <foglalkozas>Web Developer</foglalkozas>
+        <kor>22</kor>
+        <fizetes>2212</fizetes>
+    </hallgato>
+    <hallgato id="02">
+        <keresztnev>Piroska</keresztnev>
+        <vezeteknev>Vigh</vezeteknev>
+        <becenev>asdf</becenev>
+        <foglalkozas>Java Programozo</foglalkozas>
+        <kor>20</kor>
+        <fizetes>203435</fizetes>
+    </hallgato>
+    <oktato id="03">
+        <keresztnev>Ferenc</keresztnev>
+        <vezeteknev>Gordon</vezeteknev>
+        <becenev>GRSAg</becenev>
+        <foglalkozas>associate professor</foglalkozas>
+        <kor>24</kor>
+        <fizetes>345624</fizetes>
+    </oktato>
+</class>
