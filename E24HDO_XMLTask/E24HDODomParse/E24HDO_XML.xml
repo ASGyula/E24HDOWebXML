@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<KoffeinLabor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Gyartok>
+        <Gyarto GyartoID="GY01">
+            <Cegnev>Monster Beverage Corporation</Cegnev>
+            <Orszag>USA</Orszag>
+            <AlapitasEve>1935</AlapitasEve>
+        </Gyarto>
+        <Gyarto GyartoID="GY02">
+            <Cegnev>Borsodi Pörkölő Műhely Kft.</Cegnev>
+            <Orszag>Magyarország</Orszag>
+            <AlapitasEve>2018</AlapitasEve>
+        </Gyarto>
+        <Gyarto GyartoID="GY03">
+            <Cegnev>Tokyo CyberBrew Ltd.</Cegnev>
+            <Orszag>Japán</Orszag>
+            <AlapitasEve>2021</AlapitasEve>
+        </Gyarto>
+    </Gyartok>
+    <Italok>
+        <Ital ItalID="IT01" GyartoRef="GY01">
+            <Nev>Monster Espresso 304</Nev>
+            <KoffeinMg>150</KoffeinMg>
+            <KiszerelesMl>250</KiszerelesMl>
+            <Izjegy>pörkölt kávé</Izjegy>
+            <Izjegy>vanília</Izjegy>
+            <Izjegy>taurin</Izjegy>
+            <Szin>#db924b</Szin>
+            <Szin>#f7af06</Szin>
+        </Ital>
+        <Ital ItalID="IT02" GyartoRef="GY02">
+            <Nev>Etióp Yirgacheffe V60</Nev>
+            <KoffeinMg>185</KoffeinMg>
+            <KiszerelesMl>300</KiszerelesMl>
+            <Izjegy>bergamott</Izjegy>
+            <Izjegy>jázmin</Izjegy>
+            <Szin>#60bcc5</Szin>
+        </Ital>
+        <Ital ItalID="IT03" GyartoRef="GY03">
+            <Nev>Japán GigaCola</Nev>
+            <KoffeinMg>200</KoffeinMg>
+            <KiszerelesMl>500</KiszerelesMl>
+            <Izjegy>fűszeres kóla</Izjegy>
+            <Izjegy>guarana</Izjegy>
+            <Szin>#9db787</Szin>
+            <Szin>#20161f</Szin>
+        </Ital>
+    </Italok>
+    <LaborKozpontok>
+        <LaborKozpont KozpontID="LK01">
+            <Varos>Miskolc</Varos>
+            <Cim>Egyetemváros Bunkerlabor 4.</Cim>
+            <Hutokapacitas>450</Hutokapacitas>
+        </LaborKozpont>
+        <LaborKozpont KozpontID="LK02">
+            <Varos>Debrecen</Varos>
+            <Cim>Éjszakai Koffeinkamra 12.</Cim>
+            <Hutokapacitas>600</Hutokapacitas>
+        </LaborKozpont>
+        <LaborKozpont KozpontID="LK03">
+            <Varos>Budapest</Varos>
+            <Cim>Kazinczy Underground 28.</Cim>
+            <Hutokapacitas>1200</Hutokapacitas>
+        </LaborKozpont>
+    </LaborKozpontok>
+    <Tagok>
+        <Tag TagID="T01" KozpontRef="LK01">
+            <Nev>
+                <Vezeteknev>Héjjas</Vezeteknev>
+                <Keresztnev>Gyula</Keresztnev>
+            </Nev>
+            <Email>gyula@koffeinlabor.hu</Email>
+            <SzuletesiDatum>2004-05-14</SzuletesiDatum>
+        </Tag>
+        <Tag TagID="T02" KozpontRef="LK01">
+            <Nev>
+                <Vezeteknev>Kovács</Vezeteknev>
+                <Keresztnev>Bence</Keresztnev>
+            </Nev>
+            <Email>bence@koffeinlabor.hu</Email>
+            <SzuletesiDatum>2003-11-02</SzuletesiDatum>
+        </Tag>
+        <Tag TagID="T03" KozpontRef="LK02">
+            <Nev>
+                <Vezeteknev>Nagy</Vezeteknev>
+                <Keresztnev>Noémi</Keresztnev>
+            </Nev>
+            <Email>noemi@koffeinlabor.hu</Email>
+            <SzuletesiDatum>2004-08-21</SzuletesiDatum>
+        </Tag>
+    </Tagok>
+    <VIPKartyak>
+        <VIPKartya KartyaID="VIP01" TagRef="T01">
+            <Sorozatszam>KL-2026-0001</Sorozatszam>
+            <Szint>Obszidián</Szint>
+            <KiallitasDatuma>2026-02-10</KiallitasDatuma>
+        </VIPKartya>
+        <VIPKartya KartyaID="VIP02" TagRef="T02">
+            <Sorozatszam>KL-2026-0002</Sorozatszam>
+            <Szint>Arany</Szint>
+            <KiallitasDatuma>2026-03-15</KiallitasDatuma>
+        </VIPKartya>
+        <VIPKartya KartyaID="VIP03" TagRef="T03">
+            <Sorozatszam>KL-2026-0003</Sorozatszam>
+            <Szint>Ezüst</Szint>
+            <KiallitasDatuma>2026-04-01</KiallitasDatuma>
+        </VIPKartya>
+    </VIPKartyak>
+    <Fogyasztasok>
+        <Fogyasztas TagRef="T01" ItalRef="IT01">
+            <FogyasztasDatuma>2026-11-18</FogyasztasDatuma>
+            <MennyisegDb>2</MennyisegDb>
+            <Ertekeles>5</Ertekeles>
+            <RitualisKombo>1 doboz + cigi</RitualisKombo>
+        </Fogyasztas>
+        <Fogyasztas TagRef="T01" ItalRef="IT03">
+            <FogyasztasDatuma>2026-11-19</FogyasztasDatuma>
+            <MennyisegDb>1</MennyisegDb>
+            <Ertekeles>5</Ertekeles>
+            <RitualisKombo>Beadandó előtt</RitualisKombo>
+        </Fogyasztas>
+        <Fogyasztas TagRef="T02" ItalRef="IT02">
+            <FogyasztasDatuma>2026-11-20</FogyasztasDatuma>
+            <MennyisegDb>1</MennyisegDb>
+            <Ertekeles>4</Ertekeles>
+            <RitualisKombo>Tej nélkül</RitualisKombo>
+        </Fogyasztas>
+        <Fogyasztas TagRef="T03" ItalRef="IT01">
+            <FogyasztasDatuma>2026-11-20</FogyasztasDatuma>
+            <MennyisegDb>3</MennyisegDb>
+            <Ertekeles>5</Ertekeles>
+            <RitualisKombo>Vizsga előtti hajtás + 2 cigi</RitualisKombo>
+        </Fogyasztas>
+    </Fogyasztasok>
+</KoffeinLabor>
