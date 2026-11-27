@@ -1,37 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- A Koffein Labor nyilvántartási rendszerének XML sémadefiníciója -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
            elementFormDefault="qualified">
 
+    <!-- =================================================================== -->
+    <!-- 1. SAJÁT EGYSZERŰ TÍPUSOK ÉS MEGSZORÍTÁSOK           -->
+    <!-- =================================================================== -->
+
+    <!-- Gyártó elsődleges kulcs formátuma: 'GY' előtag és két számjegy (pl. GY01) -->
     <xs:simpleType name="GyartoIDTipus">
         <xs:restriction base="xs:string">
             <xs:pattern value="GY[0-9]{2}"/>
         </xs:restriction>
     </xs:simpleType>
 
+    <!-- Ital elsődleges kulcs formátuma: 'IT' előtag és két számjegy (pl. IT01) -->
     <xs:simpleType name="ItalIDTipus">
         <xs:restriction base="xs:string">
             <xs:pattern value="IT[0-9]{2}"/>
         </xs:restriction>
     </xs:simpleType>
 
+    <!-- Laboratóriumi központ elsődleges kulcs formátuma: 'LK' előtag és két számjegy (pl. LK01) -->
     <xs:simpleType name="KozpontIDTipus">
         <xs:restriction base="xs:string">
             <xs:pattern value="LK[0-9]{2}"/>
         </xs:restriction>
     </xs:simpleType>
 
+    <!-- Klubtag elsődleges kulcs formátuma: 'T' előtag és két számjegy (pl. T01) -->
     <xs:simpleType name="TagIDTipus">
         <xs:restriction base="xs:string">
             <xs:pattern value="T[0-9]{2}"/>
         </xs:restriction>
     </xs:simpleType>
 
+    <!-- VIP kártya elsődleges kulcs formátuma: 'VIP' előtag és két számjegy (pl. VIP01) -->
     <xs:simpleType name="KartyaIDTipus">
         <xs:restriction base="xs:string">
             <xs:pattern value="VIP[0-9]{2}"/>
         </xs:restriction>
     </xs:simpleType>
 
+    <!-- Gyártó alapítási évének tartománya (1800 és 2026 között) -->
     <xs:simpleType name="AlapitasEveTipus">
         <xs:restriction base="xs:integer">
             <xs:minInclusive value="1800"/>
@@ -39,6 +50,7 @@
         </xs:restriction>
     </xs:simpleType>
 
+    <!-- Koffeintartalom milligrammban (1 és 500 mg közötti egész érték) -->
     <xs:simpleType name="KoffeinTipus">
         <xs:restriction base="xs:integer">
             <xs:minInclusive value="1"/>
@@ -46,24 +58,28 @@
         </xs:restriction>
     </xs:simpleType>
 
+    <!-- Hexadecimális RGB színkód formátum (pl. #db924b) -->
     <xs:simpleType name="HexSzinTipus">
         <xs:restriction base="xs:string">
             <xs:pattern value="#[0-9a-fA-F]{6}"/>
         </xs:restriction>
     </xs:simpleType>
 
+    <!-- E-mail cím formátumának ellenőrzése reguláris kifejezéssel -->
     <xs:simpleType name="EmailTipus">
         <xs:restriction base="xs:string">
             <xs:pattern value="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"/>
         </xs:restriction>
     </xs:simpleType>
 
+    <!-- VIP kártya egyedi sorozatszáma (pl. KL-2026-0001) -->
     <xs:simpleType name="SorozatszamTipus">
         <xs:restriction base="xs:string">
             <xs:pattern value="KL-[0-9]{4}-[0-9]{4}"/>
         </xs:restriction>
     </xs:simpleType>
 
+    <!-- VIP tagsági szintek rögzített értékkészlete -->
     <xs:simpleType name="VIPSzintTipus">
         <xs:restriction base="xs:string">
             <xs:enumeration value="Bronz"/>
@@ -73,6 +89,7 @@
         </xs:restriction>
     </xs:simpleType>
 
+    <!-- Fogyasztási értékelés 1-től 5-ig terjedő skálán -->
     <xs:simpleType name="ErtekelesTipus">
         <xs:restriction base="xs:integer">
             <xs:minInclusive value="1"/>
@@ -80,6 +97,11 @@
         </xs:restriction>
     </xs:simpleType>
 
+    <!-- =================================================================== -->
+    <!-- 2. ÖSSZETETT TÍPUSOK AZ EGYEDEKHEZ                 -->
+    <!-- =================================================================== -->
+
+    <!-- Gyártó egyed felépítése: cégnév, ország, alapítás éve és kötelező GyartoID attribútum -->
     <xs:complexType name="GyartoTipus">
         <xs:sequence>
             <xs:element name="Cegnev" type="xs:string"/>
@@ -89,11 +111,13 @@
         <xs:attribute name="GyartoID" type="GyartoIDTipus" use="required"/>
     </xs:complexType>
 
+    <!-- Ital egyed felépítése: többértékű ízjegyekkel és színekkel, valamint GyartoRef idegen kulccsal -->
     <xs:complexType name="ItalTipus">
         <xs:sequence>
             <xs:element name="Nev" type="xs:string"/>
             <xs:element name="KoffeinMg" type="KoffeinTipus"/>
             <xs:element name="KiszerelesMl" type="xs:positiveInteger"/>
+            <!-- Többértékű elemek: legalább 1, legfeljebb korlátlan számú ízjegy és szín -->
             <xs:element name="Izjegy" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
             <xs:element name="Szin" type="HexSzinTipus" minOccurs="1" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -101,6 +125,7 @@
         <xs:attribute name="GyartoRef" type="GyartoIDTipus" use="required"/>
     </xs:complexType>
 
+    <!-- Laboratóriumi központ egyed felépítése -->
     <xs:complexType name="LaborKozpontTipus">
         <xs:sequence>
             <xs:element name="Varos" type="xs:string"/>
@@ -110,6 +135,7 @@
         <xs:attribute name="KozpontID" type="KozpontIDTipus" use="required"/>
     </xs:complexType>
 
+    <!-- Összetett név típus (vezetéknév és keresztnév részelemekkel) -->
     <xs:complexType name="NevTipus">
         <xs:sequence>
             <xs:element name="Vezeteknev" type="xs:string"/>
@@ -117,6 +143,7 @@
         </xs:sequence>
     </xs:complexType>
 
+    <!-- Klubtag egyed felépítése: összetett névvel és a törzslaborra mutató KozpontRef idegen kulccsal -->
     <xs:complexType name="TagTipus">
         <xs:sequence>
             <xs:element name="Nev" type="NevTipus"/>
@@ -127,6 +154,7 @@
         <xs:attribute name="KozpontRef" type="KozpontIDTipus" use="required"/>
     </xs:complexType>
 
+    <!-- VIP kártya egyed felépítése: a tulajdonos tagra hivatkozó TagRef attribútummal -->
     <xs:complexType name="VIPKartyaTipus">
         <xs:sequence>
             <xs:element name="Sorozatszam" type="SorozatszamTipus"/>
@@ -137,6 +165,7 @@
         <xs:attribute name="TagRef" type="TagIDTipus" use="required"/>
     </xs:complexType>
 
+    <!-- Fogyasztás (N:M kapcsolótábla) felépítése saját tulajdonságokkal és két idegen kulccsal -->
     <xs:complexType name="FogyasztasTipus">
         <xs:sequence>
             <xs:element name="FogyasztasDatuma" type="xs:date"/>
@@ -148,9 +177,14 @@
         <xs:attribute name="ItalRef" type="ItalIDTipus" use="required"/>
     </xs:complexType>
 
+    <!-- =================================================================== -->
+    <!-- 3. GYÖKÉRELEM ÉS INTEGRITÁSI MEGSZORÍTÁSOK    -->
+    <!-- =================================================================== -->
+
     <xs:element name="KoffeinLabor">
         <xs:complexType>
             <xs:sequence>
+                <!-- Gyártók gyűjtőeleme -->
                 <xs:element name="Gyartok">
                     <xs:complexType>
                         <xs:sequence>
@@ -159,6 +193,7 @@
                     </xs:complexType>
                 </xs:element>
 
+                <!-- Italok gyűjtőeleme -->
                 <xs:element name="Italok">
                     <xs:complexType>
                         <xs:sequence>
@@ -167,6 +202,7 @@
                     </xs:complexType>
                 </xs:element>
 
+                <!-- Laboratóriumi központok gyűjtőeleme -->
                 <xs:element name="LaborKozpontok">
                     <xs:complexType>
                         <xs:sequence>
@@ -175,6 +211,7 @@
                     </xs:complexType>
                 </xs:element>
 
+                <!-- Klubtagok gyűjtőeleme -->
                 <xs:element name="Tagok">
                     <xs:complexType>
                         <xs:sequence>
@@ -183,6 +220,7 @@
                     </xs:complexType>
                 </xs:element>
 
+                <!-- VIP kártyák gyűjtőeleme -->
                 <xs:element name="VIPKartyak">
                     <xs:complexType>
                         <xs:sequence>
@@ -191,6 +229,7 @@
                     </xs:complexType>
                 </xs:element>
 
+                <!-- Fogyasztási napló gyűjtőeleme -->
                 <xs:element name="Fogyasztasok">
                     <xs:complexType>
                         <xs:sequence>
@@ -201,6 +240,7 @@
             </xs:sequence>
         </xs:complexType>
 
+        <!-- ELSŐDLEGES KULCSOK -->
         <xs:key name="GyartoPK">
             <xs:selector xpath="Gyartok/Gyarto"/>
             <xs:field xpath="@GyartoID"/>
@@ -226,11 +266,13 @@
             <xs:field xpath="@KartyaID"/>
         </xs:key>
 
+        <!-- EGYEDISÉGI MEGSZORÍTÁS: Egy tagnak csak egy VIP kártyája lehet (1:1 kapcsolat) -->
         <xs:unique name="VIPKartyaTagUnique">
             <xs:selector xpath="VIPKartyak/VIPKartya"/>
             <xs:field xpath="@TagRef"/>
         </xs:unique>
 
+        <!-- IDEGEN KULCSOK: Referenciális integritás biztosítása -->
         <xs:keyref name="ItalGyartoFK" refer="GyartoPK">
             <xs:selector xpath="Italok/Ital"/>
             <xs:field xpath="@GyartoRef"/>
