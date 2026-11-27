@@ -17,6 +17,7 @@ public class E24HDODom{
     private final Document document;
     private final Element rootElement;
 
+// Konstruktor: beolvassa és normalizálja a megadott XML fájlt
     public E24HDODom(String fileName){
         this.fileName = fileName;
         File file = new File(fileName);
@@ -29,14 +30,17 @@ public class E24HDODom{
         }
     }
 
+// Visszaadja a memóriába betöltött fájlnevet
     public String getFileName(){
         return fileName;
     }
 
+// Visszaadja a memóriába betöltött DOM Document objektumot
     public Document getDocument(){
         return this.document;
     }
 
+// Kiírja a megnyitott fájl nevét és a gyökérelem azonosítóját
     public void printRootElement(){
         IO.print("Megnyitott fájl: ");
         Colors.printWithColor(Colors.CYAN, fileName);
@@ -46,14 +50,17 @@ public class E24HDODom{
         printPrettyLine();
     }
 
+// Kawaii uwu 💅🏿
     public void printPrettyLine(){
         IO.println("----------------------------");
     }
 
+// Visszaadja a gyökérelemet
     public Element getRootElement(){
         return rootElement;
     }
 
+// Adott tagű elemek kigyűjtése és indexelése az ID attribútum alapján HashMap-be
     public HashMap<String, Element> getElementList(String tag, String elementID){
         HashMap<String, Element> hashMap = new HashMap<String, Element>();
         NodeList nodeList = getDocument().getElementsByTagName(tag);
@@ -72,6 +79,7 @@ public class E24HDODom{
         return hashMap;
     }
 
+// Többértékű gyerekelemek (pl. Izjegy, Szin) szöveges tartalmának összefűzése vesszővel
     public String joinMultipleTags(String tag, Element element){
         NodeList nodeList = element.getElementsByTagName(tag);
         StringBuilder stringBuilder = new StringBuilder();
@@ -82,6 +90,7 @@ public class E24HDODom{
         return stringBuilder.toString();
     }
 
+// A kapott String tömb elemeinek szöveges tartalmának összefűzése vesszővel
     public String joinMultipleText(String[] stringArray){
         StringBuilder stringBuilder = new StringBuilder();
         for(int i = 0; i < stringArray.length; i++){
@@ -91,6 +100,7 @@ public class E24HDODom{
         return stringBuilder.toString();
     }
 
+// Új element hozzáfűzése a szülőhöz
     public void appendChild(Element parent, String tagName, String text){
         Element child = getDocument().createElement(tagName);
         child.setTextContent(text);
